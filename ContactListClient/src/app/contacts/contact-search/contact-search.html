@@ -1,0 +1,12 @@
+<div class="search">
+    <p>Filter: </p>
+    <mat-form-field class="search-input" appearance="outline">
+        <input matInput type="text" [(ngModel)]="value">
+        @if (value) {
+        <button matSuffix matIconButton aria-label="Clear" (click)="clearValue()">
+            <mat-icon>close</mat-icon>
+        </button>
+        }
+    </mat-form-field>
+    <button class="search-button"  (click)="onSearch()" matButton>Search</button>
+</div>

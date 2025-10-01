@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+  margin: 10px;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+}
+
+.table-header span {
+  margin-right: 10px; /* space between text and line */
+  margin-left: 10px;
+  white-space: nowrap; /* prevent text from breaking */
+}
+
+.table-header hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid rgb(186, 186, 186);
+}
+
+td.mat-cell {
+  border-bottom-style: none !important;
+}
+
+.view-button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  font-family: arial, sans-serif;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -1,0 +1,89 @@
+<div cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+    <div class="dialog-toolbar" cdkDragHandle>
+      <h2 class="title">Contact</h2>
+      <mat-dialog-actions class="action-buttons">
+        <button matButton (click)="onSave()">Save</button>
+        <button matButton mat-dialog-close cdkFocusInitial (click)="onCancel()">Cancel</button>
+      </mat-dialog-actions>
+    </div>
+<mat-dialog-content>
+    <form [formGroup]="contactForm" mat-dialog-content>
+    <div class="dialog-row">
+      <mat-label class="label" for="name">*Name:</mat-label>
+      <mat-form-field appearance="outline" class="field">
+        <input matInput id="name" formControlName="name" maxlength="50" required/>
+        @if (name?.invalid && (name?.dirty || name?.touched)) {
+          <div class="alert">
+            @if (name?.hasError('required')) {
+              <div>
+                Name is required.
+              </div>
+            }
+            @if (name?.hasError('maxlength')) {
+              <div>
+                Max length is 50 characters.
+              </div>
+            }
+          </div>
+        }
+      </mat-form-field>
+    </div>
+    <div class="dialog-row">
+      <mat-label class="label" for="phone">*Phone:</mat-label>
+      <mat-form-field appearance="outline" class="field">
+        <input matInput id="phone" formControlName="phone" mask="(000) 000-0000" maxlength="14" required/>
+          @if (phone?.invalid && (phone?.dirty || phone?.touched)) {
+            <div class="alert">
+              @if (phone?.hasError('required')) {
+                <div>
+                  Phone is required.
+                </div>
+              }
+              @if (phone?.hasError('pattern')) {
+                <div>
+                  Format is (xxx) xxx-xxxx
+                </div>
+              }
+            </div>
+          }
+      </mat-form-field>
+    </div>
+    <div class="dialog-row">
+      <mat-label class="label" for="fax">Fax:</mat-label>
+      <mat-form-field appearance="outline" class="field">
+        <input matInput id="fax" formControlName="fax" mask="(000) 000-0000" maxlength="14"/>
+          @if (fax?.invalid && (fax?.dirty || fax?.touched)) {
+            <div class="alert">
+              @if (fax?.hasError('pattern')) {
+                <div>
+                  Format is (xxx) xxx-xxxx
+                </div>
+              }
+            </div>
+          }
+      </mat-form-field>
+    </div>
+    <div class="dialog-row">
+      <mat-label class="label" for="email">Email:</mat-label>
+      <mat-form-field appearance="outline" class="field">
+        <input matInput id="email" formControlName="email" />
+         @if (email?.invalid && (email?.dirty || email?.touched)) {
+            <div class="alert">
+              @if (email?.hasError('email')) {
+                <div>
+                  Enter valid email.
+                </div>
+              }
+            </div>
+          }
+      </mat-form-field>
+    </div>
+    <div class="dialog-row">
+      <mat-label class="label" for="notes">Notes:</mat-label>
+      <mat-form-field appearance="outline" class="field">
+        <textarea matInput id="notes" formControlName="notes"></textarea>
+      </mat-form-field>
+    </div>
+</form>
+</mat-dialog-content>
+</div>

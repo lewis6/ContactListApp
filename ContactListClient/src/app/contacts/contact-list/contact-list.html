@@ -1,0 +1,8 @@
+<div>
+    <app-contact-toolbar></app-contact-toolbar>
+    <div class="spacer">
+        <app-contact-search (search)="onSearch($event)"></app-contact-search>
+        <app-contact-add-button (contactAdded)="onContactAdded($event)"></app-contact-add-button>
+    </div>
+    <app-contact-table #contactTable [filterValue]="filterValue"></app-contact-table>
+</div>

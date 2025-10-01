@@ -1,0 +1,17 @@
+# ASP.NET Core
+ContactListAPI/bin/
+ContactListAPI/obj/
+*.user
+*.vs/
+ContactListAPI/publish/
+
+# Angular
+ContactListClient/node_modules/
+ContactListClient/dist/
+ContactListClient/.angular/
+
+# General
+.env
+*.log
+ContactListAPI/ContactListAPI.zip
+.DS_Store

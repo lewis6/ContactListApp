@@ -1,0 +1,32 @@
+.search-input {
+  width: 50vw;
+  max-width: 600px;
+    /* Controls the overall height of the form field container */
+  --mat-form-field-container-height: 40px; 
+
+  /* Adjusts the text padding inside the input */
+  --mat-form-field-container-vertical-padding: 0.5em;
+
+  /* Optionally, scale the floating label */
+  --mat-form-field-floating-label-scale: 0.75;
+  margin-right: 20px;
+}
+
+.search {
+    display: flex;
+    margin-top: 30px; /* Space from Toolbar */
+    align-items: baseline; /* Centered vertically */
+}
+
+.search > p {
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 18px;;
+}
+
+.search-button {
+        background-color: rgb(0, 153, 255);
+        color: white !important; /* Override Angular Material */
+        padding: 22px 30px;
+        font-size: 16px;
+}

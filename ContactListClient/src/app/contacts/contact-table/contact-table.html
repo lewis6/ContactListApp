@@ -1,0 +1,39 @@
+<div>
+    <div class="table-header">
+        <span>Search Results</span>
+        <hr />
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element">
+            <button class="view-button"(click)="openDialog(element)">view</button> 
+            {{element.name}} 
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone | phone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fax">
+        <th mat-header-cell *matHeaderCellDef> Fax </th>
+        <td mat-cell *matCellDef="let element"> {{element.fax | phone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> eMail </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastUpdateDate">
+        <th mat-header-cell *matHeaderCellDef> Last Update </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastUpdateDate | date:'M-d-yyyy hh:mma'}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
